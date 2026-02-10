@@ -47,56 +47,49 @@ contract tips {
     ) public onlyOwner {
         bool waitressExist = false;
 
-        // ตรวจสอบว่ามี waitress ในระบบแล้วหรือยัง
         if (waitress.length >= 1) {
             for (uint i = 0; i < waitress.length; i++) {
                 if (waitress[i].walletAddress == walletAddress) {
                     waitressExist = true;
-                    break;
                 }
             }
         }
 
-        // ถ้ายังไม่มี ให้เพิ่มเข้าไปใน Array
         if (waitressExist == false) {
             waitress.push(Waitress(walletAddress, name, percent));
         }
     }
 
-    function removeWaitress(address walletAddress) public onlyOwner {
-        if (waitress.length >= 1) {
-            for (uint i = 0; i < waitress.length; i++) {
-                if (waitress[i].walletAddress == walletAddress) {
-                    // Shift elements left
+    // function removeWaitress(address walletAddress) public onlyOwner {
+    //     if (waitress.length >= 1) {
+    //         for (uint i = 0; i < waitress.length; i++) {
+    //             if (waitress[i].walletAddress == walletAddress) {
 
-                    for (uint j = i; j < waitress.length - 1; j++) {
-                        waitress[j] = waitress[j + 1];
-                    }
+    //                 for (uint j = i; j < waitress.length - 1; j++) {
+    //                     waitress[j] = waitress[j + 1];
+    //                 }
 
-                    waitress.pop();
+    //                 waitress.pop();
 
-                    break;
-                }
-            }
-        }
-    }
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
 
-    function distributeBalance() public {
-        require(address(this).balance > 0, "No Money");
+    // // function distributeBalance() public {
+    //     require(address(this).balance > 0, "No Money");
 
-        if (waitress.length >= 1) {
-            uint totalamount = address(this).balance;
+    //     if (waitress.length >= 1) {
+    //         uint totalamount = address(this).balance;
 
-            for (uint j = 0; j < waitress.length; j++) {
-                // Calculate share
+    //         for (uint j = 0; j < waitress.length; j++) {
 
-                uint distributeAmount = (totalamount * waitress[j].percent) /
-                    100;
+    //             uint distributeAmount = (totalamount * waitress[j].percent) /
+    //                 100;
 
-                // Send money
-
-                _transferFunds(waitress[j].walletAddress, distributeAmount);
-            }
-        }
-    }
+    //             _ transferFunds(waitress[j].walletAddress, distributeAmount);
+    //         }
+    //     }
+    // }
 }
