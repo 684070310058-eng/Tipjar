@@ -42,6 +42,26 @@
 			},
 			{
 				"inputs": [],
+				"name": "distributeBalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "removeWaitress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "viewWaitress",
 				"outputs": [
 					{
@@ -97,7 +117,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"tipjar.sol": "tips"
+			"tipjar_edit.sol": "tips"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -111,12 +131,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"tipjar.sol": {
-			"keccak256": "0xad6124a22ad3df68e14c06b2bc5cc4f5b611e05bd60750156b4433597b56bb87",
+		"tipjar_edit.sol": {
+			"keccak256": "0xb7459438616918f78ebc0e4926f70c6b9d79ce8ddc0bfc77e2c1df29ce4cba2a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://668124b269ef1ef2c1d69cad6f5ec85a933564ebf407bf00647b1f1f2fc32b45",
-				"dweb:/ipfs/QmTMwvwtQBMwcUdXHvmDPYeTyC8pPzhtdNjn1ZjCwowtZs"
+				"bzz-raw://ed3cad4e5130a883908a1d3d143beab6e72bf1e72f62454a35eda2876f12788d",
+				"dweb:/ipfs/Qmd4wY1wt8BaoER8Vaoj9cXhdN8DmhDauPszxJTuoctsKL"
 			]
 		}
 	},
